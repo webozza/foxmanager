@@ -1,5 +1,8 @@
+console.log('helo')
+
 $(".list").click(function () {
   var work_field = [];
+  console.log("work", work_field);
   $.each($("input[name='work_field']:checked"), function () {
     work_field.push($(this).val());
   });
@@ -13,12 +16,14 @@ $(".list").click(function () {
   $.each($("input[name='total_employee']:checked"), function () {
     total_employee.push($(this).val());
   });
+
   $('[name="cnpj"]').on("keyup", () => {
+  let  cnpj = $("#cnpj").val().replace(/\D/g, "");
     if (
       work_field.length > 0 &&
       turnover.length > 0 &&
       total_employee.length > 0 &&
-      $("#cnpj").val().length === 18
+      cnpj.length === 14
     ) {
       $(".action_button").addClass("active");
       $(".action_button").prop("disabled", false);
@@ -28,6 +33,8 @@ $(".list").click(function () {
     }
   });
 });
+
+$("#cnpj").on("keyup", () => {});
 
 $(".action_button").click(function () {
   alert("Success");
@@ -49,20 +56,20 @@ let toggleMousewheel = (shouldEnable) => {
   }
 };
 
-let multipleOptions = () => {
-  const okBtn = $(".ok_button");
-  $('[name="work_field"]').change(function () {
-    let selectedChoices = $('input[name="work_field"]:checked').length;
-    console.log("selectedChoices", selectedChoices);
-    if (selectedChoices !== 0) {
-      okBtn.addClass("active");
-      okBtn.removeAttr("disabled");
-    } else {
-      okBtn.removeClass("active");
-      okBtn.attr("disabled");
-    }
-  });
-};
+// let multipleOptions = () => {
+//   const okBtn = $(".ok_button");
+//   $('[name="work_field"]').change(function () {
+//     let selectedChoices = $('input[name="work_field"]:checked').length;
+//     console.log("selectedChoices", selectedChoices);
+//     if (selectedChoices !== 0) {
+//       okBtn.addClass("active");
+//       okBtn.removeAttr("disabled");
+//     } else {
+//       okBtn.removeClass("active");
+//       okBtn.attr("disabled");
+//     }
+//   });
+// };
 
 let singleOptions = () => {
   $('[name="turnover"], [name="total_employee"]').click(function (e) {
@@ -90,10 +97,47 @@ $(".ok_button").click(function (e) {
   foxSwiper.slideNext();
 });
 
+// foxSwiper.on("slideChange", function () {
+//   //toggleDraggable(false);
+//   slideNextExecuted = false;
+//   pregressBar()
+// });
+
+// let pregressBar =() =>{
+//   let slideValue = 0
+//   let totalSlide = foxSwiper.slides.length - 1;
+//   let incrementperSlide = 100 / totalSlide
+
+//   $(".progress-bar").css("width", slideValue + "%");
+//   $(".progress-title span").text(slideValue + "%");
+// console.log('dfsdfsdfdsf')
+// }
+
+let slideValue = 0;
+let totalSlide = foxSwiper.slides.length - 1;
+let incrementperSlide = 100 / totalSlide;
+
+// Initialize the progress bar and title
+$(".progress-bar").css("width", slideValue + "%");
+$(".progress-title span").text(slideValue + "%");
+
 foxSwiper.on("slideChange", function () {
-  //toggleDraggable(false);
+  // Check if it's a forward or backward slide change
   slideNextExecuted = false;
-  console.log("change");
+  if (foxSwiper.activeIndex > foxSwiper.previousIndex) {
+    // Forward slide change
+    slideValue += incrementperSlide;
+  } else {
+    // Backward slide change
+    slideValue -= incrementperSlide;
+  }
+
+  // Ensure the progress bar doesn't go below 0% or above 100%
+  slideValue = Math.max(0, Math.min(100, slideValue));
+
+  // Update the progress bar and title
+  $(".progress-bar").css("width", slideValue + "%");
+  $(".progress-title span").text(slideValue + "%");
 });
 
 // prev next button
@@ -132,5 +176,10 @@ document
   .querySelector(".swiper-button-prev")
   .addEventListener("click", goToPreviousSlide);
 
-multipleOptions();
+$(".skip-btn").on("click", (e) => {
+  e.preventDefault();
+  foxSwiper.slideNext();
+});
+
+// multipleOptions();
 singleOptions();

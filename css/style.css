@@ -208,7 +208,7 @@ img.banner {
 }
 .right_info form {
   display: flex;
-  height: 600px;
+  min-height: 530px;
   flex-direction: column;
   justify-content: center;
 }
@@ -248,14 +248,58 @@ img.banner {
   display: flex;
 }
 
+/* Progress Bar  */
+.progress-bar-wrapper {
+  margin: auto;
+  max-width: 1010px;
+}
+.progress {
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.8rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #3f597515;
+  border-radius: 0.25rem;
+  border-radius: 10px;
+}
+.progress-bar {
+  background-color: #00cc00;
+}
+
+/* Skip button  */
+
+.skip-btn {
+  width: 120px;
+  padding: 8px 5px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f4f7fa;
+  color: #3f5975;
+  opacity: 0.6;
+  transition: .2s;
+  text-align: left;
+
+}
+.skip-btn:focus{
+  outline: none;
+}
+
+.skip-btn:hover {
+  opacity: 1;
+}
+
+.skip-btn i {
+  padding-left: 5px;
+}
 
 /* prev next btn  */
 
-  .toggle-btn {
-    position: absolute;
-    top: 150%;
-    left: 92%;
-
+.toggle-btn {
+  position: absolute;
+  top: 150%;
+  left: 92%;
 }
 
 .cnpj-input-wraper p {
@@ -364,7 +408,11 @@ input#cnpj.valid + #check-icon {
     justify-content: flex-start;
   }
   .swiper {
+    padding-top: 0px;
     height: 450px;
+  }
+  .swiper-wrapper {
+    top: 30px;
   }
 }
 
@@ -439,28 +487,27 @@ input#cnpj.valid + #check-icon {
   .options.four ul {
     display: flex;
     flex-wrap: wrap;
+  }
+  .toggle-btn {
+    position: absolute;
+    top: 150%;
+    left: 84%;
+  }
+  #check-icon {
+    position: absolute;
+    top: 57px;
+    left: 190px;
+    transform: translateY(-50%);
+    color: #00cc00;
+    display: none;
+  }
+  .cnpj-input-wraper {
+    flex-wrap: wrap;
+  }
+  .cnpj-input-wraper p {
+    padding: 10px 0px;
+  }
 }
-.toggle-btn {
-  position: absolute;
-  top: 150%;
-  left: 84%;
-}
-#check-icon {
-  position: absolute;
-  top: 57px;
-  left: 190px;
-  transform: translateY(-50%);
-  color: #00cc00;
-  display: none;
-}
-.cnpj-input-wraper {
-  flex-wrap: wrap;
-}
-.cnpj-input-wraper p{
-  padding: 10px 0px;
-}
-}
-
 
 /* Responsive  */
 @media only screen and (max-width: 1388px) {
