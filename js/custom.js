@@ -1,4 +1,4 @@
-console.log('helo')
+console.log("helo");
 
 $(".list").click(function () {
   var work_field = [];
@@ -18,7 +18,7 @@ $(".list").click(function () {
   });
 
   $('[name="cnpj"]').on("keyup", () => {
-  let  cnpj = $("#cnpj").val().replace(/\D/g, "");
+    let cnpj = $("#cnpj").val().replace(/\D/g, "");
     if (
       work_field.length > 0 &&
       turnover.length > 0 &&
@@ -56,21 +56,6 @@ let toggleMousewheel = (shouldEnable) => {
   }
 };
 
-// let multipleOptions = () => {
-//   const okBtn = $(".ok_button");
-//   $('[name="work_field"]').change(function () {
-//     let selectedChoices = $('input[name="work_field"]:checked').length;
-//     console.log("selectedChoices", selectedChoices);
-//     if (selectedChoices !== 0) {
-//       okBtn.addClass("active");
-//       okBtn.removeAttr("disabled");
-//     } else {
-//       okBtn.removeClass("active");
-//       okBtn.attr("disabled");
-//     }
-//   });
-// };
-
 let singleOptions = () => {
   $('[name="turnover"], [name="total_employee"]').click(function (e) {
     setTimeout(() => {
@@ -81,7 +66,7 @@ let singleOptions = () => {
 
 let slideNextExecuted = false;
 
-$('[name="work_field"]').one("click", function (e) {
+function handleClick() {
   if (!slideNextExecuted) {
     // Set the flag to true to prevent further execution
     slideNextExecuted = true;
@@ -90,7 +75,9 @@ $('[name="work_field"]').one("click", function (e) {
       foxSwiper.slideNext();
     }, 3000);
   }
-});
+}
+
+$('[name="work_field"]').on("click", handleClick);
 
 $(".ok_button").click(function (e) {
   e.preventDefault();
