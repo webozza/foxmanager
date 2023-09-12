@@ -38,7 +38,7 @@ const foxSwiper = new Swiper(".swiper", {
   direction: "vertical",
   slidesPerView: 2,
   allowTouchMove: false,
-  mousewheel: false,
+  mousewheel: true,
 });
 
 let toggleMousewheel = (shouldEnable) => {
@@ -55,11 +55,9 @@ let multipleOptions = () => {
     let selectedChoices = $('input[name="work_field"]:checked').length;
     console.log("selectedChoices", selectedChoices);
     if (selectedChoices !== 0) {
-      toggleMousewheel(true);
       okBtn.addClass("active");
       okBtn.removeAttr("disabled");
     } else {
-      toggleMousewheel(false);
       okBtn.removeClass("active");
       okBtn.attr("disabled");
     }
