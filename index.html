@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FoxManager</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="header">
+      <div class="header_title"><span>Bem-vindo</span></div>
+      <div class="header_actions">
+        <ul>
+          <li><img src="images/minimize.svg" alt="" /></li>
+          <li><img src="images/close.svg" alt="" /></li>
+        </ul>
+      </div>
+    </section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-4 left_info">
+          <a class="logo" href=""><img src="images/logo.svg" alt="" /></a>
+          <h1>Bem-vindo ao FoxManager.</h1>
+          <p class="baner_info">
+            Preencha este formulário para nos ajudar a configurar o sistema para
+            você.
+          </p>
+          <img class="banner" src="images/banner.svg" alt="" />
+        </div>
+        <div class="col-md-12 col-lg-8 right_info">
+          <form method="POST" action="#">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <!-- Option -->
+                <div class="option_section swiper-slide">
+                  <h2>Qual o seu ramo de atuação?</h2>
+                  <p>Você pode selecionar mais de um item.</p>
+                  <div class="options four">
+                    <ul>
+                      <label class="list">
+                        <input
+                          type="checkbox"
+                          name="work_field"
+                          id="work_field_opt1"
+                          value="Comércio"
+                        />
+                        <div class="option_list">
+                          <img src="images/comercio.png" alt="" /><span
+                            >Comércio</span
+                          >
+                        </div>
+                      </label>
+                      <label class="list">
+                        <input
+                          type="checkbox"
+                          name="work_field"
+                          id="work_field_opt2"
+                          value="Serviço"
+                        />
+                        <div class="option_list">
+                          <img src="images/servico.png" alt="" /><span
+                            >Serviço</span
+                          >
+                        </div>
+                      </label>
+                      <label class="list">
+                        <input
+                          type="checkbox"
+                          name="work_field"
+                          id="work_field_opt3"
+                          value="Indústria"
+                        />
+                        <div class="option_list">
+                          <img src="images/Industria.png" alt="" /><span
+                            >Indústria</span
+                          >
+                        </div>
+                      </label>
+                      <label class="list">
+                        <input
+                          type="checkbox"
+                          name="work_field"
+                          id="work_field_opt4"
+                          value="Outros"
+                        />
+                        <div class="option_list">
+                          <img src="images/Outros.png" alt="" /><span
+                            >Outros</span
+                          >
+                        </div>
+                      </label>
+                    </ul>
+                  </div>
+                  <div class="ok force-hide">
+                    <button class="ok_button" disabled>
+                      Salvar e continuar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Option -->
+                <div class="option_section swiper-slide">
+                  <h2>Qual o faturamento anual da sua empresa?</h2>
+                  <div class="options three">
+                    <ul>
+                      <label class="list">
+                        <input
+                          type="radio"
+                          name="turnover"
+                          id="turnover_opt1"
+                          value="MEI / MICRO Até R$ 360 mil"
+                        />
+                        <div class="option_list">
+                          <img src="images/MEI.png" alt="" /><span
+                            >MEI / MICRO Até R$ 360 mil</span
+                          >
+                        </div>
+                      </label>
+                      <label class="list">
+                        <input
+                          type="radio"
+                          name="turnover"
+                          id="turnover_opt2"
+                          value="PEQUENO PORTE Até R$ 4,8 milhões"
+                        />
+                        <div class="option_list">
+                          <img src="images/pequend.png" alt="" /><span
+                            >PEQUENO PORTE Até R$ 4,8 milhões</span
+                          >
+                        </div>
+                      </label>
+                      <label class="list">
+                        <input
+                          type="radio"
+                          name="turnover"
+                          id="turnover_opt2"
+                          value="MÉDIO / GRANDE + de R$ 4,8 milhões"
+                        />
+                        <div class="option_list">
+                          <img src="images/medio.png" alt="" /><span
+                            >MÉDIO / GRANDE + de R$ 4,8 milhões</span
+                          >
+                        </div>
+                      </label>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Option -->
+                <div class="option_section swiper-slide">
+                  <h2>Qual o total de colaboradores da sua empresa?</h2>
+                  <div class="options four">
+                    <ul>
+                      <label class="list">
+                        <input
+                          type="radio"
+                          name="total_employee"
+                          id="total_employee_opt1"
+                          value="Até 2"
+                        />
+                        <div class="option_list">
+                          <img src="images/2.png" alt="" /><span>Até 2</span>
+                        </div>
+                      </label>
+                      <label class="list">
+                        <input
+                          type="radio"
+                          name="total_employee"
+                          id="total_employee_opt2"
+                          value="De 3 a 5"
+                        />
+                        <div class="option_list">
+                          <img src="images/5.png" alt="" /><span>De 3 a 5</span>
+                        </div>
+                      </label>
+                      <label class="list">
+                        <input
+                          type="radio"
+                          name="total_employee"
+                          id="total_employee_opt3"
+                          value="De 5 a 2"
+                        />
+                        <div class="option_list">
+                          <img src="images/20.png" alt="" /><span
+                            >De 5 a 20</span
+                          >
+                        </div>
+                      </label>
+                      <label class="list">
+                        <input
+                          type="radio"
+                          name="total_employee"
+                          id="total_employee_opt4"
+                          value="+ de 20"
+                        />
+                        <div class="option_list">
+                          <img src="images/20_plus.png" alt="" /><span
+                            >+ de 20</span
+                          >
+                        </div>
+                      </label>
+                    </ul>
+                  </div>
+                </div>
+                <div class="swiper-slide last-slide">
+                  <h2>Informe o seu CNPJ</h2>
+                  <div class="d-flex cnpj-input-wraper">
+                    <input
+                      type="text"
+                      oninput="validateCNPJ(this.value)"
+                      placeholder="XX. XXX.XXX/0001-XX"
+                      id="cnpj"
+                      name="cnpj"
+                    />
+                    <i class="fa-solid fa-check" id="check-icon"></i>
+                    <p>Unistaff Suporte Empresarial Ltda.</p>
+                  </div>
+                  <p class="shadow-text">
+                    Boa parte do FoxManager depende dessa informação. Sem o
+                    CNPJ, muitas funcionalidades não poderão ser configuradas ou
+                    utilizadas.
+                  </p>
+
+                  <div class="action">
+                    <button class="action_button" disabled>
+                      Salvar e continuar
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide"></div>
+              </div>
+            </div>
+            <div class="toggle-btn">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
